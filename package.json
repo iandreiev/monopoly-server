@@ -1,0 +1,54 @@
+{
+  "name": "mp-api",
+  "version": "1.0.0",
+  "description": "MPAPI",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server.js",
+    "start:dev": "nodemon ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "coinpayments": "^2.1.0",
+    "cors": "^2.8.5",
+    "dependencies": "0.0.1",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "firebase-tools": "^9.1.0",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nexmo": "^2.9.1",
+    "node-fetch": "^2.6.1",
+    "node-sass": "^5.0.0",
+    "nodemailer": "^6.4.17",
+    "rootpath": "^0.1.2",
+    "sequelize": "^6.3.5",
+    "socket.io": "^3.0.3",
+    "xoauth2": "^1.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-inline-css": "^4.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "nodemon": "^2.0.4"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iandreiev/monopoly-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iandreiev/monopoly-server/issues"
+  },
+  "homepage": "https://github.com/iandreiev/monopoly-server#readme"
+}

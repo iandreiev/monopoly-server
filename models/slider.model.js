@@ -43,7 +43,7 @@ Slider.update = (id, newSlider, result) => {
     })
 }
 Slider.getAll = result => {
-    sql.query("SELECT * FROM slider", (err,res)=>{
+    sql.query("SELECT * FROM slider ORDER BY `slider`.`arrange` ASC", (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(null, err);

@@ -3,6 +3,7 @@ module.exports = app => {
 
     app.post('/slider', slider.create);
     app.get('/slider',slider.getAll);
+    app.get('/slider/:id',slider.getById);
     app.patch('/slider/:id',slider.updateById);
     app.delete('/slider/:id',slider.delete);
 }

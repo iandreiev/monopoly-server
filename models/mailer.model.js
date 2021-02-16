@@ -49,8 +49,8 @@ Mail.send = (type, email, result) => {
             var n = Math.floor(100000 + Math.random() * 900000);
 
             var encode = Buffer.from(res[0].email).toString('base64')
-            var testlink = `http://localhost:8080/emailVerification/${encode}`
-            var resetLink = `http://localhost:8080/resetPassword/${encode}`
+            var testlink = `http://monopolylife.ru/emailVerification/${encode}`
+            var resetLink = `http://monopolylife.ru/resetPassword/${encode}`
             var link = `http://monopolylife.ru/emailVerification/${encode}`
 
             var mailOptions = {

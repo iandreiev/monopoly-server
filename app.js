@@ -55,6 +55,8 @@ require("./routes/sms.routes.js")(app);
 require("./routes/mailer.routes")(app);
 require("./routes/videos.routes")(app);
 require("./routes/slider.routes")(app);
+require("./routes/builder.routes")(app);
+require("./routes/pages.routes")(app);
 
 
 

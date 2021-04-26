@@ -49,7 +49,7 @@ exports.update = (req, res) => {
 
     Category.updateById(
         req.params.categoryId,
-        new category(req.body),
+        new Category(req.body),
         (err, data) => {
             if (err) {
                 if (err.kind === "not_found") {

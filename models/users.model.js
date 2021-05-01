@@ -316,6 +316,7 @@ User.resetUserPassword = (password, email, result) => {
             return;
         }
 
+        console.log(password,email)
         console.log("updated user: ", { email: email });
             result(null, { email: email });
     })

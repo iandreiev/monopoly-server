@@ -7,7 +7,7 @@ module.exports = app =>{
  app.post("/users/reg", user.regPass);
  app.post("/users/login", user.loginPass);
  app.patch("/users/setPassword/:password/:userId",user.setPassword);
- app.patch("/users/setPasswordEmail/:password/:email",user.resetPassword);
+ app.patch("/users/setPasswordEmail/:password/:email",user.resetUserPassword);
  app.get("/users", user.findAll);
  app.get("/users/:userId", user.findOne);
  app.get("/users/getUser/:userId", user.getUserById);

@@ -187,7 +187,7 @@ function testInterval(id,type){
         
         })
 
-        }, dev)
+        }, ms)
 }
 
 function calcDivs(userfunded, percentage, userId) {

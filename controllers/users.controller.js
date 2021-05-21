@@ -262,8 +262,11 @@ exports.setPassword = (req,res) => {
     })
 }
 
-exports.resetPassword = (req,res) => {
-    User.resetUserPassword(req.params.password, req.params.email, (err,data)=>{
+exports.resetUserPassword = (req,res) => {
+    User.resetPassword(req.params.password, req.params.email, (err,data)=>{
+        
+        console.log(`Object to update: ${req.params.password} ${req.params.email}`)
+        
         if (err)
             res.status(500).send({
                 message:

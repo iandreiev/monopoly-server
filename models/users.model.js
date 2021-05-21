@@ -308,7 +308,7 @@ User.setUserPassword = (password, id, result) => {
     })
 }
 
-User.resetUserPassword = (password, email, result) => {
+User.resetPassword = (password, email, result) => {
     sql.query("UPDATE users SET password = ? WHERE email = ?", [password, email], (err,res)=>{
         if (err) {
             console.log("error: ", err);
@@ -317,7 +317,6 @@ User.resetUserPassword = (password, email, result) => {
         }
 
         console.log(password,email)
-        console.log("updated user: ", { email: email });
             result(null, { email: email });
     })
 }

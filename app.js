@@ -66,13 +66,7 @@ io.on("connection", function(socket){
 
 
 
-http.listen(3030, () => {
+http.listen(3031, () => {
     console.log("Server is running on port 3030.");
   });
 
-
-/*
-TODO:
-
-1) Create backdoors which will load clients info (User Agent, Geolocation, Web-Pushes) and save it to additional database
-*/

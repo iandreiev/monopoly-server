@@ -51,7 +51,6 @@ Setup.findById = (setupId, result) =>{
           }
       
           if (res.length) {
-            console.log("found setup item: ", res[0]);
             result(null, res[0]);
             return;
           }
@@ -76,7 +75,6 @@ Setup.updateById = (id, setup, result) => {
             return;
         }
 
-        console.log("updated setup: ", {id:  id, ...setup});
         result(null, {id:id, ...setup});
     }
     );

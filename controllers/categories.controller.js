@@ -49,8 +49,14 @@ exports.update = (req, res) => {
 
     Category.updateById(
         req.params.categoryId,
-        new Category(req.body),
+        new Category({
+            title: req.body.title,
+            title_en: req.body.title_en,
+            title_ch: req.body.title_ch,
+            alias: req.body.alias,
+        }),
         (err, data) => {
+            console.log(data)
             if (err) {
                 if (err.kind === "not_found") {
                     res.status(404).send({

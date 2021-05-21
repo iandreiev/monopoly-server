@@ -68,7 +68,6 @@ Project.findById = (projectId, result) => {
           }
       
           if (res.length) {
-            console.log("found project item: ", res[0]);
             result(null, res[0]);
             return;
           }
@@ -87,7 +86,6 @@ Project.getByCat = (catId, result) =>{
           }
       
           if (res.length) {
-            console.log("found project item: ", res);
             result(null, res);
             return;
           }
@@ -113,7 +111,6 @@ Project.updateById = (id, project, result) => {
             return;
         }
 
-        console.log("updated project: ", {id:  id, ...project});
         result(null, {id:id, ...project});
     }
     );   
@@ -133,7 +130,6 @@ Project.remove = (id, result) => {
             return;
         }
 
-        console.log("deleted project with id: ", id);
         result(null, res);
     });
   };
@@ -158,7 +154,6 @@ Project.setType = (type, id, result) => {
             console.log('Таке життя')
         }
 
-        console.log("Set mode to project id: ", id);
         result(null, res); 
     })
 }

@@ -22,6 +22,7 @@ const Project = function(project){
     this.location_en = project.location_en;
     this.location_ch = project.location_ch;
     this.type = project.type;
+    this.annual = project.annual
 }
 
 
@@ -97,8 +98,8 @@ Project.getByCat = (catId, result) =>{
 
 //Update
 Project.updateById = (id, project, result) => {
-    sql.query("UPDATE projects SET title = ?, category = ?, projectBrief = ?, funded = ?, backers = ?, createdAt = ?, entrance = ?, image = ?, yield = ?, returns = ?, minimum = ?, cost = ?, location = ?, title_en = ?, projectBrief_en = ?, location_en = ?, title_ch = ?, projectBrief_ch= ?, location_ch = ? WHERE id = ?",
-    [project.title, project.category, project.projectBrief, project.funded, project.backers, project.createdAt, project.entrance, project.image,  project.yield, project.returns, project.minimum, project.cost, project.location, project.title_en, project.projectBrief_en, project.location_en, project.title_ch, project.projectBrief_ch, project.location_ch, id],
+    sql.query("UPDATE projects SET title = ?, category = ?, projectBrief = ?, funded = ?, backers = ?, createdAt = ?, entrance = ?, image = ?, yield = ?, returns = ?, minimum = ?, cost = ?, location = ?, title_en = ?, projectBrief_en = ?, location_en = ?, title_ch = ?, projectBrief_ch= ?, location_ch = ?, annual = ? WHERE id = ?",
+    [project.title, project.category, project.projectBrief, project.funded, project.backers, project.createdAt, project.entrance, project.image,  project.yield, project.returns, project.minimum, project.cost, project.location, project.title_en, project.projectBrief_en, project.location_en, project.title_ch, project.projectBrief_ch, project.location_ch, project.annual, id],
     (err,res) => {
         if (err){
             console.log("error: ", err);

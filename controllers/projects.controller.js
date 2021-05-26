@@ -27,7 +27,8 @@ exports.create = (req, res) => {
         cost: req.body.cost,
         location: req.body.location,
         location_en: req.body.location_en,
-        location_ch: req.body.location_ch
+        location_ch: req.body.location_ch,
+        annual: req.body.annual
     });
 
     Project.create(project, (err, data) => {

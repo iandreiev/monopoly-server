@@ -84,7 +84,7 @@ Payment.updateType = (id, type, result) => {
 // Get all transactions
 
 Payment.getAll = result => {
-    sql.query("SELECT * FROM transactions", (err, res) => {
+    sql.query("SELECT * FROM transactions ORDER BY id DESC", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);

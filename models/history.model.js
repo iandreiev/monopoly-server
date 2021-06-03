@@ -28,7 +28,7 @@ History.create = (newHistory, result) =>{
 }
 
 History.getAll = result => {
-    sql.query("SELECT * FROM history", (err,res)=>{
+    sql.query("SELECT * FROM history ORDER BY id DESC", (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -41,7 +41,7 @@ History.getAll = result => {
 }
 
 History.findById = (userId, result) =>{
-    sql.query("SELECT * FROM history WHERE userID = ?", userId, (err,res)=>{
+    sql.query("SELECT * FROM history WHERE userID = ? ORDER BY id DESC", userId, (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(err, null);

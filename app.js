@@ -67,6 +67,6 @@ io.on("connection", function(socket){
 
 
 http.listen(3031, () => {
-    console.log("Server is running on port 3030.");
+    console.log("Server is running on port 3031.");
   });
 

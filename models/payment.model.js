@@ -33,7 +33,7 @@ const Payment = function (pay) {
     this.amount = pay.amount;
     this.rate_btc = pay.rate_btc;
     this.projectID = pay.projectID;
-    this.createdAt = new Date().toDateString();
+    this.createdAt = new Date().toISOString().slice(0, 19).replace('T', ' ');
     this.shareSize = pay.shareSize;
 }
 

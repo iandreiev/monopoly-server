@@ -5,7 +5,7 @@ const ChatItem = function (msg) {
     this.fromID = msg.fromID;
     this.chatID = msg.chatID;
     this.content = msg.content;
-    this.createdAt = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    this.createdAt = msg.createdAt;
     this.type = msg.type;
 }
 

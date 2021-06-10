@@ -22,7 +22,7 @@ NewChat.create = (newChat, result)=>{
 }
 
 NewChat.getAll = result => {
-    sql.query("SELECT * FROM allChats", (err,res)=>{
+    sql.query("SELECT * FROM allChats ORDER BY id DESC", (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -35,7 +35,7 @@ NewChat.getAll = result => {
 }
 
 NewChat.findById = (chatId, result) => {
-    sql.query("SELECT * FROM allChats WHERE userID = ?", chatId, (err,res)=>{
+    sql.query("SELECT * FROM allChats WHERE userID = ? ORDER BY id DESC", chatId, (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(err, null);

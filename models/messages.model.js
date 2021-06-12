@@ -56,6 +56,24 @@ ChatItem.getAll = result => {
 //     })
 // }
 
+ChatItem.countMessages = (chatId, type, result) => {
+    sql.query("SELECT COUNT(*) AS counter FROM allMessages WHERE userID = ? AND type = ?", [chatId, type], (err,res)=>{
+        if (err) {
+            result(err, null);
+            return;
+          }
+      
+          if (res) {
+            console.log("found user item: ", res);
+            result(null, {result: res[0].counter});
+            return;
+          }
+      
+          // not found Customer with the id
+          result({ kind: "not_found" }, null);
+    })
+}
+
 //Get by user id
 ChatItem.findById = (chatId, result) => {
     sql.query("SELECT * FROM allMessages WHERE userID = ?", chatId, (err,res)=>{

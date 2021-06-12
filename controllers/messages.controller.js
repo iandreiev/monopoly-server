@@ -71,6 +71,26 @@ exports.getChatById = (req,res)=>{
     })
 }
 
+exports.countActiveMessages = (req,res) =>{
+    ChatItem.countMessages(
+        req.params.chatId,
+        req.params.type,
+        (err,data)=>{
+            if (err) {
+                if (err.kind === "not_found") {
+                    res.status(404).send({
+                        message: `Not found Project with id ${req.params.chatId}.`
+                    });
+                } else {
+                    res.status(500).send({
+                        message: "Error while retrieving Project with id " + req.params.chatId
+                    });
+                }
+            } else res.send(data);
+        }
+    )
+}
+
 exports.closeMessage = (req,res) => {
     if (!req.body) {
         res.status(400).send({

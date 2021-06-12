@@ -7,5 +7,5 @@ module.exports = app =>{
     app.get("/msg/user/:chatId", chatItem.getById);
     app.get("/msg/user/chat/:chatId", chatItem.getChatById);
     app.post("/msg/status/:chatId/:userId", chatItem.closeMessage);
-    app.patch("/msg/hide/:msgId/0", notif.msgHide);
+    app.patch("/msg/hide/:msgId/0", chatItem.msgHide);
 }

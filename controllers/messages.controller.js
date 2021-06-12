@@ -112,3 +112,21 @@ exports.closeMessage = (req,res) => {
         } else res.send(data);
     })
 }
+
+
+//Change type from active to each other
+exports.msgHide = (req,res) => {
+    ChatItem.isActive(req.params.msgId, (err,data)=>{
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found notif with id ${req.params.msgId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error while retrieving notif with id " + req.params.msgId
+                });
+            }
+        } else res.send(data);  
+    })
+}

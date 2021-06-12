@@ -133,6 +133,27 @@ ChatItem.setClose = (chatId, userId, result) => {
     })
 }
 
+ChatItem.isActive = (id, type, result) =>{
+    sql.query(
+        `UPDATE allMessages SET type = 0 WHERE id = ?`,
+        id,
+        (err,res)=>{
+            if (err){
+                console.log("error: ", err);
+                result(null,err);
+                return;
+            }
+    
+            if(res.affectedRow == 0){
+                result({kind: "not_found"}, null);
+                return;
+            }
+    
+            result(null, {id:id});
+        }
+    )
+}
+
 
 module.exports = ChatItem;
 

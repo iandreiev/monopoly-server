@@ -133,7 +133,7 @@ ChatItem.setClose = (chatId, userId, result) => {
     })
 }
 
-ChatItem.isActive = (id, type, result) =>{
+ChatItem.isActive = (id, result) =>{
     sql.query(
         `UPDATE allMessages SET type = 0 WHERE id = ?`,
         id,

@@ -216,8 +216,8 @@ User.updateById = (id, user, result) => {
         })
 }
 
-User.loadPassportById = (passport_1,passport_2, passport_3, id, result) => {
-    sql.query("UPDATE users SET passport_1 = ?, passport_2 = ?, passport_3 WHERE id = ?", [passport_1,passport_2,id], (err,res)=>{
+User.loadPassportById = (passport_1, passport_2, passport_3, id, result) => {
+    sql.query("UPDATE users SET passport_1 = ?, passport_2 = ?, passport_3 = ? WHERE id = ?", [passport_1,passport_2, passport_3,id], (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -228,8 +228,8 @@ User.loadPassportById = (passport_1,passport_2, passport_3, id, result) => {
             result({ kind: "not_found" }, null);
             return;
         }
-        console.log("updated user: ", { id: id, ...pass });
-            result(null, { id: id, ...pass });
+        console.log("updated user: ", { id: id });
+            result(null, { id: id });
     })
 }
 

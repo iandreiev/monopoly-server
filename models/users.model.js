@@ -12,6 +12,7 @@ const User = function (user) {
     this.taxid = user.taxid;
     this.passport_1 = user.passport_1;
     this.passport_2 = user.passport_2;
+    this.passport_3 = user.passport_3;
     this.phone = user.phone;
     this.isVerified = user.isVerified;
     this.isPhoneVerified = user.isPhoneVerified;
@@ -215,8 +216,8 @@ User.updateById = (id, user, result) => {
         })
 }
 
-User.loadPassportById = (passport_1,passport_2,id, result) => {
-    sql.query("UPDATE users SET passport_1 = ?, passport_2 = ? WHERE id = ?", [passport_1,passport_2,id], (err,res)=>{
+User.loadPassportById = (passport_1,passport_2, passport_3, id, result) => {
+    sql.query("UPDATE users SET passport_1 = ?, passport_2 = ?, passport_3 WHERE id = ?", [passport_1,passport_2,id], (err,res)=>{
         if (err) {
             console.log("error: ", err);
             result(null, err);

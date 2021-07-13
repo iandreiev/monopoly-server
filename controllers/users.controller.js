@@ -18,6 +18,7 @@ exports.create = (req, res) => {
         avatar: req.body.avatar,
         passport_1: req.body.passport_1,
         passport_2: req.body.passport_2,
+        passport_3: req.body.passport_3,
         phone: req.body.phone,
         isVerified: req.body.isVerified,
         isPhoneVerified: req.body.isPhoneVerified,
@@ -206,6 +207,7 @@ exports.regPass = (req,res) => {
         sex: req.body.sex,
         passport_1: req.body.passport_2,
         passport_2: req.body.passport_2,
+        passport_3: req.body.passport_3,
         phone: req.body.phone,
         isVerified: req.body.isVerified,
         isPhoneVerified: req.body.isPhoneVerified,
@@ -283,7 +285,7 @@ exports.setPassports = (req,res) => {
         });
     }
     
-    User.loadPassportById(req.body.passport_1, req.body.passport_2, req.params.userId, (err,data)=>{
+    User.loadPassportById(req.body.passport_1, req.body.passport_2, req.body.passport_3, req.params.userId, (err,data)=>{
         if (err)
         res.status(500).send({
             message:

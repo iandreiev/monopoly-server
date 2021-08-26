@@ -17,6 +17,6 @@ module.exports = app =>{
  app.patch("/users/verify/:id",user.setVerified);
  app.patch("/users/setAvatar/:userId",user.setAvatar);
  app.delete("/users/:userId", user.delete);
-//  app.patch("/users/:userId/:roleId", user.setUserRole);
+ app.patch("/users/setRole/:userId/:roleId", user.setUserRole);
 
 }

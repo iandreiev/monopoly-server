@@ -31,7 +31,8 @@ exports.create = (req, res) => {
         sharings: req.body.sharings,
         avgReturns: req.body.avgReturns,
         totalReturns: req.body.totalReturns,
-        password: req.body.password
+        password: req.body.password,
+        role: req.body.role
     });
     
 

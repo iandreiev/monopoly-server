@@ -283,18 +283,18 @@ User.getUserProjects = (id, result) => {
     })
 }
 
-// User.setRole = (id, type, result) => {
-//     sql.query("UPDATE users SET type = ? WHERE id = ?", [type, id], (err, res) => {
-//         if (err) {
-//             console.log("error: ", err);
-//             result(null, err);
-//             return;
-//         }
+User.setRole = (id, role, result) => {
+    sql.query("UPDATE users SET role = ? WHERE id = ?", [role, id], (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
 
-//         console.log("set role: ", res);
-//         result(null, res);
-//     })
-// }
+        console.log("set role: ", res);
+        result(null, res);
+    })
+}
 
 User.setUserPassword = (password, id, result) => {
     sql.query("UPDATE users SET password = ? WHERE id = ?", [password,id], (err,res)=>{

@@ -10,7 +10,7 @@ module.exports = app =>{
  app.patch("/users/resetPasswordEmail/:password/:email",user.resetUserPassword);
  app.get("/users", user.findAll);
  app.get("/users/:userId", user.findOne);
- app.get("/users/getUser/:userId", user.getUserById);
+ app.get("/users/getUser/:userId", user.findOne);
  app.get("/users/projects/:userId", user.getUP);
  app.patch("/users/:userId", user.update);
  app.patch("/users/setPassport/:userId", user.setPassports);

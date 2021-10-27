@@ -7,6 +7,7 @@ const ChatItem = function (msg) {
     this.content = msg.content;
     this.createdAt = msg.createdAt;
     this.type = msg.type;
+    this.isNew = msg.isNew;
 }
 
 
@@ -56,8 +57,8 @@ ChatItem.getAll = result => {
 //     })
 // }
 
-ChatItem.countMessages = (chatId, type, result) => {
-    sql.query("SELECT COUNT(*) AS counter FROM allMessages WHERE userID = ? AND type = ?", [chatId, type], (err,res)=>{
+ChatItem.countMessages = (chatId, isNew, result) => {
+    sql.query("SELECT COUNT(*) AS counter FROM allMessages WHERE userID = ? AND isNew = ?", [chatId, isNew], (err,res)=>{
         if (err) {
             result(err, null);
             return;

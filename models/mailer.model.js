@@ -49,9 +49,9 @@ Mail.send = (type, email, result) => {
             var n = Math.floor(100000 + Math.random() * 900000);
 
             var encode = Buffer.from(res[0].email).toString('base64')
-            var testlink = `http://monopolylife.ru/emailVerification/${encode}`
-            var resetLink = `http://monopolylife.ru/resetPassword/${encode}`
-            var link = `http://monopolylife.ru/emailVerification/${encode}`
+            var testlink = `https://app.monopolylife.ru/emailVerification/${encode}`
+            var resetLink = `https://app.monopolylife.ru/resetPassword/${encode}`
+            var link = `https://app.monopolylife.ru/emailVerification/${encode}`
 
             var mailOptions = {
                 from: 'no-reply@monopolyinfo.ru',

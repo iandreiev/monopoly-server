@@ -24,6 +24,7 @@ const User = function (user) {
     this.sharings = user.sharings;
     this.avgReturns = user.avgReturns;
     this.totalReturns = user.totalReturns;
+    this.role = 0
 };
 
 

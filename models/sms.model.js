@@ -13,8 +13,8 @@ SMS.send = (newSMS, result) => {
 
     //Sender
     const nexmo = new Nexmo({
-        apiKey: 'b411ea87',
-        apiSecret: 'jGsm6pTbwLIoMHbo',
+        apiKey: 'bcba68f8',
+        apiSecret: 'dU2U0gtc1ZK6eCsl',
         debug: true
     });
 

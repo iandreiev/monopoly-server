@@ -176,6 +176,7 @@ exports.loginPass = (req,res)=>{
         req.body.email,
         req.body.password,
         (err,data) => {
+            console.log(req.body.email, req.body.password)
             if (err) {
                 if (err.kind === "not_found") {
                     res.status(404).send({
@@ -186,42 +187,7 @@ exports.loginPass = (req,res)=>{
                         message: "Error while retrieving user with id " + req.params.userId
                     })
                 }
-            } else res.send({
-                userID: data.id,
-                name: data.name,
-                surname: data.surname,
-                displayName: data.displayName,
-                phone: data.phone,
-                email: data.email,
-                code: data.code,
-                taxid: data.taxid,
-                sex: data.sex,
-                isVerified: data.isVerified,
-                isPhoneVerified: data.isPhoneVerified,
-                isEmailVerified: data.isEmailVerified,
-                avatar: data.avatar,
-                passport_1: data.passport_1,
-                passport_2: data.passport_2,
-                passport_3: data.passport_3,
-                affiliate: data.affiliate,
-                token: data.token,
-                role: data.role,
-                fathername: data.fathername,
-                status: data.status,
-                rating: data.rating,
-                invested: data.invested,
-                sharings: data.sharings,
-                avgReturns: data.avgReturns,
-                totalReturns: data.totalReturns,
-                friend: data.friend,
-                projectID: data.projectID,
-                active: data.active,
-                createdAt: data.createdAt,
-                userfunded: data.userfunded,
-                percentage: data.percentage,
-                shareSize: data.shareSize,
-                type: data.type
-            })
+            } else res.json(data)
         }
     )
 }
